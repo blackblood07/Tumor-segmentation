@@ -4,29 +4,20 @@ Project read me: Note- This is a work in progress!
 
 ### one sentence summary:
 
-This repository holds an attempt to apply Convolutional Neural Networks (CNN) on Brain MRI scans using data from " Kaggle” (https://www.kaggle.com/datasets/mateuszbuda/lgg-mri-segmentation)
+This repository holds an attempt to apply Convolutional Neural Networks (CNN) on Brain MRI scans using data from " Kaggle” to automate the process of segementation of tumor cells. (https://www.kaggle.com/datasets/mateuszbuda/lgg-mri-segmentation)
 
-### Abstract: 
-This section could contain a short paragraph which include the following:
+### Abstract:
 
-• Definition of the tasks / challenge Ex: The task, as defined by the Kaggle challenge is to use the MRI- scans of actual cancer patients 
-  to perform active segmentation that could make treatments much faster. 
+  The task, is to use the MRI- scans of actual cancer patients who had taken MRI scans during their radiation treatment and peroform active segmentation that could   make treatment much faster. The approach in this repository formulates the problem as a semantic segmentation task, using convolutional neural networks as the model with pre-processed medical images as input. Our best model was able to locate tumor as closely as possible with accuracy of “ 0.97” and with best loss value of “ 9.4227e-01”. 
 
-• Your approach Ex: The approach in this repository formulates the problem as a semantic segmentation task, using convolutional neural networks as 
-  the model with pre-processed medical images as input. 
-
-• Summary of the performance achieved : Our best model was able to locate tumor as closely as possible with accuracy of “ 0.97” and with best loss value of “ 9.4227e-01”.
-
-* ** Summary of work done**:
+### Summary of work done:
 
 ### Data
-  - Data:
-    Type: medical images (256x256 pixel tif),
+    Type: medical images (256x256 pixel .tif),
           Input: original medical images, output: Segmented original medical images
-
     Size: 749 MB
-
-    Instances (Train, Test, Validation Split): how many data points? total 7858 patients,(decided to train, test and validate with 100 images), 60 for training, 20 for validation (60-80 images), 20 for testing (80- 100 images)
+   
+    Instances:  (Train, Test, Validation Split): total 7858 patients,(decided to train, test and validate with 100 images), 60 for training, 20 for validation (60-80 images), 20 for testing (80- 100 images)
 
 ### Preprocessing / Clean up
     * Seperated image paths and mask paths. 
@@ -57,8 +48,6 @@ How you trained: Software- Kaggle and hardware- Laptop.
 
 How long did training take- less than 1 minute
 
--Will be updataing this part soon
-
  Training curves (loss vs epoch for test/train).
  
  How did you decide to stop training.
@@ -81,6 +70,13 @@ How long did training take- less than 1 minute
 
 ### Future Work
 -What would be the next thing that you would try.
+
+ -- I am trying to improve the result by training minimun of 500 images and maximun of 1000 images.
+ 
+ -- The current machine learning framework being utilized is "pytorch," however, due to memory errors arising from this platform, I am attempting to modify and explore potential solutions to resolve the issue, and also experimenting with "tensorflow" to determine if it can address the problem at hand.
+ 
+ -- My next implementation step will involve increasing the number of epochs to 500 and generating a Loss vs Epoch curve, which will enable me to draw better conclusions based on the graph and assess the effectiveness of the training process.
+ 
 -What are some other studies that can be done starting from here.
 
 ### How to reproduce results
