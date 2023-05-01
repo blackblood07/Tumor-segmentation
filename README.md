@@ -1,6 +1,6 @@
 # Tumor segmentaion with MRI scans/ Kaggle
 
-<<<<<<< HEAD
+
   This repository holds an attempt to apply Convolutional Neural Networks (CNN) on Brain MRI scans using data from " Kaggle” (https://www.kaggle.com/datasets/mateuszbuda/lgg-mri-segmentation)
 
 ### Overview: 
@@ -18,31 +18,14 @@
   - The data used for this project was purely medical images of brain MRI scans, which is of type ".tif ". The size of each images is (256x256).
     The input taken is the original medical images and the respected output were the Segmented original medical images. The size of the entire datset is 749 MB. 
     In total the data set consisted of 7858 patients in which I limited the number of samples to 1500 images to be used for further processing and analysis. 
-    60% of the sample (900 images) for training, 20% for validation (300 images) and 20% for testing (300 images).
+    60% of the sample (900 images) were used for training, 20% for validation (300 images) and 20% for testing (300 images).
 
 ### Preprocessing / Clean up
+
     - Seperated image paths and mask paths. 
     - Normalized pixel's brightness, anything above 127(Threshold) was consideres as white pixel(1) and rest were black(0).
 
-### Data Visualization
-=======
-### one sentence summary:
-
-This repository holds an attempt to apply Convolutional Neural Networks (CNN) on Brain MRI scans using data from " Kaggle” to automate the process of segementation of tumor cells. (https://www.kaggle.com/datasets/mateuszbuda/lgg-mri-segmentation)
-
-### Abstract:
-
-  The task, is to use the MRI- scans of actual cancer patients who had taken MRI scans during their radiation treatment and peroform active segmentation that could   make treatment much faster. The approach in this repository formulates the problem as a semantic segmentation task, using convolutional neural networks as the model with pre-processed medical images as input. Our best model was able to locate tumor as closely as possible with accuracy of “ 0.97” and with best loss value of “ 9.4227e-01”. 
-
-### Summary of work done:
-
-### Data
-    Type: medical images (256x256 pixel .tif),
-          Input: original medical images, output: Segmented original medical images
-    Size: 749 MB
-   
-    Instances:  (Train, Test, Validation Split): total 7858 patients,(decided to train, test and validate with 100 images), 60 for training, 20 for validation (60-80 images), 20 for testing (80- 100 images)
->>>>>>> fe57e64877e8dbee807cb56dc7c0fa68400f8196
+### Data Visualization:
 
     - Effective training visualisations were obtained after training:
           
@@ -73,22 +56,8 @@ This repository holds an attempt to apply Convolutional Neural Networks (CNN) on
       1500 had me train them sucessfully. 
    - The key performance metrics used was F1 score
 
-<<<<<<< HEAD
+
 ### Results:
-
-=======
- Training curves (loss vs epoch for test/train).
- 
- How did you decide to stop training.
- 
- - I checked where overfitting occured meaning where the errors increased steeply and then decreased.
- 
- Any difficulties? How did you resolve them? 
-- Right now my prediction is flipped and Im working on identifying the error, will get over that soon. 
->>>>>>> fe57e64877e8dbee807cb56dc7c0fa68400f8196
-
-   
-  
 
 ### Conclusions
 
@@ -96,23 +65,13 @@ This repository holds an attempt to apply Convolutional Neural Networks (CNN) on
       So, U-net works better in the case of reduced number of images 
 
 ### Future Work
-<<<<<<< HEAD
+
    - In the future, I would try to train more images using double U-net as it is more refined and results of accuracy can be even more close and perfect. So, I will work to check if my assumptions 
      make sense or not. Concept of segementation can be studied and applied in various medical field beyond brain tumor segementation, such as GI tract tumor, Lung cancer, Breast cancer and so on. 
      Additionally, the concept of segementataion can be apllied outside of medical field such as obejct detection in autonomous vehicles and Robotics.
  
-=======
--What would be the next thing that you would try.
 
- -- I am trying to improve the result by training minimun of 500 images and maximun of 1000 images.
- 
- -- The current machine learning framework being utilized is "pytorch," however, due to memory errors arising from this platform, I am attempting to modify and explore potential solutions to resolve the issue, and also experimenting with "tensorflow" to determine if it can address the problem at hand.
- 
- -- My next implementation step will involve increasing the number of epochs to 500 and generating a Loss vs Epoch curve, which will enable me to draw better conclusions based on the graph and assess the effectiveness of the training process.
- 
--What are some other studies that can be done starting from here.
 
->>>>>>> fe57e64877e8dbee807cb56dc7c0fa68400f8196
 ### How to reproduce results
 
    - To reproduce the results, the user must have Python 3.6 or higher installed, as well as the PyTorch and segmentation-models-pytorch packages. This can be effectively done in Kaggle environment too as I did. 
