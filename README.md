@@ -1,4 +1,7 @@
-# Tumor segmentaion with MRI scans/ Kaggle
+# Tumor segmentaion with Brain MRI scans/ Kaggle
+
+![brain tumor image](https://user-images.githubusercontent.com/112579358/235495039-a71d5602-c4d7-4081-aca2-c88d26d766a6.jpg)
+
 
 
   This repository holds an attempt to apply Convolutional Neural Networks (CNN) on Brain MRI scans using data from " Kaggle” (https://www.kaggle.com/datasets/mateuszbuda/lgg-mri-segmentation)
@@ -27,11 +30,17 @@
 
 ### Data Visualization:
 
-    - Effective training visualisations were obtained after training:
+  Effective training visualisations were obtained after training:
           
-      Loss Vs Epochs:
+  Loss Vs Epochs:
+  
+  ![image](https://user-images.githubusercontent.com/112579358/235492692-426127ff-d9bb-45f5-870e-c64b3ffce8df.png)
 
-      F1 score Vs Epochs:
+
+  F1 score Vs Epochs:
+  
+  ![image](https://user-images.githubusercontent.com/112579358/235493193-edd9b4db-c7d1-48ec-b582-434a4938a703.png)
+
 
 
     
@@ -48,16 +57,20 @@
 
 ### Training
 
-    - The Software used for this project is "Kaggle"(Notebook environment) and the respective hardware used was my laptop. The training took about 51 minutes to complete,
-      training curves (loss vs epoch for test/train and F1 vs epochs) are uploaded above. I decided to stop my training by checking where overfitting occured, meaning where the errors 
-      increased steeply and then decreased, the training curves came out pretty good and 100% accuracy was acheived at the 93rd epoch. The loss value was decreasing 
-      with good difference as well. During the process, I had a very difficult time training more that 100 images and my predictions were flipped. 
-      So I checked for the orders of the images and made sure the length of the images and the masks were off same size before training and towards the end increasing the image size to 
-      1500 had me train them sucessfully. 
+ The Software used for this project is "Kaggle"(Notebook environment) and the respective hardware used was my laptop. The training took about 51 minutes to complete,
+ training curves (loss vs epoch for test/train and F1 vs epochs) are uploaded above. I decided to stop my training by checking where overfitting occured, meaning where the errors increased steeply and then decreased, the training curves came out pretty good and 100% accuracy was acheived at the 93rd epoch. The loss value was decreasing with good difference as well. During the process, I had a very difficult time training more that 100 images and my predictions were flipped. So I checked for the orders of the images and made sure the length of the images and the masks were off same size before training and towards the end increasing the image size to 1500 had me train them sucessfully. 
    - The key performance metrics used was F1 score
 
 
 ### Results:
+
+Image, Ground truth, prediction:
+
+![image](https://user-images.githubusercontent.com/112579358/235493478-414e1e26-eaf4-496c-943d-743f5fe46cf7.png)
+
+
+![image](https://user-images.githubusercontent.com/112579358/235493572-67a27e60-2722-44e0-823c-1df73627f08b.png)
+
 
 ### Conclusions
 
@@ -75,15 +88,16 @@
 ### How to reproduce results
 
    - To reproduce the results, the user must have Python 3.6 or higher installed, as well as the PyTorch and segmentation-models-pytorch packages. This can be effectively done in Kaggle environment too as I did. 
-     These can be installed via pip by running the commands as per Necessary dependencies.py file uploaded above. Data preparation can be done in your own ways as the dataset has no limitations. 
-     Basic preprocessing step should be done. Make sure to normalize the pixels before any further analysis. To train a model on the your own data, you can use the code in the "build_U-net.py file". 
-     You will need to modify the Dataset class to read in their own data.Evaluation and prediction methods are also flexible you can refer the notebook if you prefer to evaluate based on F1 score and Loss values. 
+     These can be installed via pip by running the commands as per "Necessary dependencies.py" file uploaded above. Data preparation can be done in your own ways as the dataset has no limitations. 
+     Basic preprocessing step should be done. Make sure to normalize the pixels before any further analysis. To train a model on your own data, you can use the code in the "build_U-net.py file". 
+     You will need to modify the Dataset class to read in their own data. Evaluation and prediction methods are also flexible you can refer the notebook if you prefer to evaluate based on F1 score and Loss values. 
      One thing to note is to make sure to select the GPU 4 option which can be found under the accerelator options if you were to use Kaggle notebook to significantly speed up the training process. 
 
 ### Overview of files in repository
   
-  - To install the required packages please refer to Necessary dependencies.py file. Copy and paste the libraries listed and a simple cell run should have them installed in your environment. 
+  - To install the required packages please refer to "Necessary dependencies.py" file. Copy and paste the libraries listed and a simple cell run should have them installed in your environment. 
     If you hit up with some errors while installing, please make sure to pip install the packages before importing. Follow the link attached to the pip install guide.
+    
     link: https://pip.pypa.io/en/stable/cli/pip_install/
 
 ### Data
@@ -92,7 +106,7 @@
 
 ### Training
 
-  - initialize and prepare loaders using data_prep.py file. Build and define the model using build_U-net.py file. Train the model using train_model.py
+  - initialize and prepare loaders using "data_prep.py" file. Build and define the model using "build_U-net.py" file. Train the model using "train_model.py"
 
 ### Citations
 
